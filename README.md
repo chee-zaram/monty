@@ -26,7 +26,7 @@ in the current directory, run:
 ```sh
 make install
 ```
-Otherwise, install and move it to a standard location, run the following instead:
+Otherwise, to install and move to a standard location, run the following instead:
 ```sh
 make install
 make monty
@@ -45,9 +45,9 @@ where `filename` is the file containing Monty bytecodes with an optional `.m` su
 ## Contributors
 [Chee-zaram Okeke](https://github.com/chee-zaram).
 ***
-For bugs and suggestions, consider
+* For bugs and suggestions, consider
 [opening an issue](https://github.com/chee-zaram/monty/issues).
-For collaborations, email \<ecokeke21@gmail.com\>.
+* For collaborations, email \<ecokeke21@gmail.com\>.
 ***
 
 [sponsor-badge]: https://img.shields.io/badge/♥-Sponsor-fc0fb5.svg
