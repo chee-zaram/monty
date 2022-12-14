@@ -9,7 +9,7 @@ PCHAR {
 	if (!*stack)
 		FREE_STACK(*stack), CLOSE(ERR_PCHAR_EMPTY, line_number);
 
-	if ((*stack)->n < 0 || (*stack)->n > 127)
+	if ((*stack)->n < 32 || (*stack)->n > 127)
 		FREE_STACK(*stack), CLOSE(ERR_PCHAR_VAL, line_number);
 
 	printf("%c\n", (*stack)->n);
@@ -19,7 +19,7 @@ PSTR {
 	STACK_STRUCT *temp = *stack;
 
 	(NON)line_number;
-	for ( ; temp && (temp->n > 0 && temp->n < 127); temp = temp->next)
+	for ( ; temp && (temp->n >= 32 && temp->n <= 127); temp = temp->next)
 		putchar(temp->n);
 	putchar('\n');
 }
