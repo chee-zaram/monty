@@ -28,7 +28,7 @@
 #define ERR_PCHAR_EMPTY		"L%u: can't pchar, stack empty\n"
 
 /************************ misc **************************/
-#define DELIM			" \n"
+#define DELIM			" \n\t"
 #define BYTE_CODE_FILE		(argv[1])
 #define VALID_ARG_CNT		(2)
 #define READ_ONLY		"r"
