@@ -41,7 +41,32 @@ The interpreter is invoked by running
 monty filename[.m]
 ```
 where `filename` is the file containing Monty bytecodes with an optional `.m` suffix.
-
+#### Operations
+* `push <int>`: Puts an integer `<int>` on the stack.
+* `pall`: Prints all the items on the stack.
+* `pint`: Prints the value at the top of the stack.
+* `pop` : Removes the top element of the stack.
+* `swap`: Swaps the top two elements on the stack.
+* `add` : Adds the top two elements of the stack. The result is stored in the
+second top element of the stack, and the top element is removed.
+* `nop` : Does nothing.
+* `sub` : Substracts the top element of the stack from the second top element.
+The result is stored in the second top element, and the top element is removed.
+* `div` : Divides the second top element by the top element. The result is stored
+in the second top element, and the top element is removed.
+* `mul` : Multiplies the second top element by the top element. Result is stored
+in the second top element, and the top element is removed.
+* `mod` : Gets the remainder of the division of the second top element by the top
+element. The result is stored in the second top element, and the top is removed.
+* `pchar`: Prints the character whose **ascii** value corresponds to the value
+of the top element on the stack.
+* `pstr`: Prints the string starting at the top of the stack until **0** is met
+or the character is not printable or the stack is over.
+* `rotl`: Makes the top element the last one, and the second top the new top.
+* `rotr`: Makes the last element the top element.
+* `stack`: Sets the format of the data to a stack. This is also the default of `monty`.
+* `queue`: Sets the format of the data to a queue.
+***
 ## Contributors
 [Chee-zaram Okeke](https://github.com/chee-zaram).
 ***
