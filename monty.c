@@ -78,7 +78,7 @@ INIT_CHECKS
  */
 int main(int argc, char **argv)
 {
-	FILE *f_ptr = OPEN_FILE;
+	FILE *f_ptr = OPEN_FILE();
 
 	CHECKS();
 	RUN_INTERPRETER();

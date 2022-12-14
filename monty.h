@@ -1,7 +1,11 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
 
-/******************************** int constants ***********************/
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+
+/************************ int constants ***********************/
 #define FAIL			(-1)
 #define SUCCESS			(0)
 #define FALSE			(0)
@@ -36,12 +40,12 @@
 #define FREE_STACK		free_stack
 
 /*********************** data types ************************/
-#define _UI_			unsigned int
-#define _INT_			int
-#define _CHAR_			char
-#define NON			void
-#define _SIZE__T_		size_t
-#define _SSIZE_T_		ssize_t
+typedef unsigned int		_UI_;
+typedef int			_INT_;
+typedef char			_CHAR_;
+typedef void			NON;
+typedef size_t			_SIZE__T_;
+typedef ssize_t			_SSIZE_T_;
 #define STACK_STRUCT		stack_t
 
 /************************ functions for ops and some more ********************/
@@ -64,13 +68,8 @@
 #define ROTR			void rotr(stack_t **stack, _UI_ line_number)
 #define STACK			void stack(stack_t **stack, _UI_ line_number)
 #define QUEUE			void queue(stack_t **stack, _UI_ line_number)
+#define OPEN_FILE()		fopen(BYTE_CODE_FILE, READ_ONLY)
 
-
-#include <stdio.h>
-#include <stdlib.h>
-
-
-#define OPEN_FILE		fopen(BYTE_CODE_FILE, READ_ONLY)
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
