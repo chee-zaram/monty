@@ -18,7 +18,7 @@
 #define ERR_POP			"L%u: can't pop an empty stack\n"
 #define ERR_SWAP		"L%u: can't swap, stack too short\n"
 #define ERR_ADD			"L%u: can't add, stack too short\n"
-#define ERR_SUB			"L%u: can't sub\n"
+#define ERR_SUB			"L%u: can't sub, stack too short\n"
 #define ERR_DIV			"L%u: can't div, stack too short\n"
 #define ERR_DIV_ZERO		"L%u: division by zero\n"
 #define ERR_MUL			"L%u: can't mul, stack too short\n"
