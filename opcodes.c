@@ -28,7 +28,7 @@ PUSH {
 }
 
 PALL {
-	stack_t *temp;
+	STACK_STRUCT *temp;
 
 	(NON)line_number;
 	for (temp = *stack; temp; temp = temp->next)
@@ -43,10 +43,8 @@ PINT {
 }
 
 POP {
-	stack_t *tmp;
-
 	if (*stack)
-		tmp = *stack, *stack = (*stack)->next, free(tmp), tmp = NULL;
+		DEL_TOP(stack, 0);
 	else
 		FREE_STACK(*stack), CLOSE(ERR_POP, line_number);
 }

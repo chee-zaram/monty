@@ -7,9 +7,9 @@
  *
  * Return: Pointer to the newly added node.
  */
-stack_t *add_node_to_end(stack_t **head, const int n)
+STACK_STRUCT *add_node_to_end(STACK_STRUCT **head, const _INT_ n)
 {
-	stack_t *new = NULL;
+	STACK_STRUCT *new = NULL;
 
 	if (head)
 	{
@@ -43,9 +43,9 @@ stack_t *add_node_to_end(stack_t **head, const int n)
  *
  * Return: Pointer to newly created node.
  */
-stack_t *add_node_to_beg(stack_t **head, const int n)
+STACK_STRUCT *add_node_to_beg(STACK_STRUCT **head, const _INT_ n)
 {
-	stack_t *new;
+	STACK_STRUCT *new;
 
 	if (!head)
 		return (NULL);
@@ -78,10 +78,10 @@ stack_t *add_node_to_beg(stack_t **head, const int n)
  *
  * Return: Pointer to new node.
  */
-stack_t *add_node_at_idx(stack_t **h, unsigned int idx, int n)
+STACK_STRUCT *add_node_at_idx(STACK_STRUCT **h, _UI_ idx, _INT_ n)
 {
-	stack_t *new = NULL, *temp = NULL;
-	unsigned int i = 0;
+	STACK_STRUCT *new = NULL, *temp = NULL;
+	_UI_ i = 0;
 
 	if (h)
 	{
@@ -107,4 +107,43 @@ stack_t *add_node_at_idx(stack_t **h, unsigned int idx, int n)
 			}
 	}
 	return (new);
+}
+
+
+/**
+ * del_stacknode - Deletes a node at a given index.
+ * @head: Address of head pointer.
+ * @index: Index to find node in list.
+ *
+ * Return: 1 if successful, -1 otherwise.
+ */
+_INT_ del_stacknode(STACK_STRUCT **head, _UI_ index)
+{
+	STACK_STRUCT *temp, *temp_next, *temp_prev;
+
+	if (head && *head)
+	{
+		if (index == 0)
+		{
+			temp = *head;
+			temp_next = (*head)->next;
+			temp_prev = (*head)->prev;
+			if (temp_prev)
+			{
+				if (temp_next)
+					temp_prev->next = temp_next;
+				else
+					temp_prev->next = NULL;
+			}
+			if (temp_next)
+				temp_next->prev = temp_prev;
+			if (!temp_prev)
+				*head = (*head)->next;
+			free(temp);
+			temp = NULL;
+			return (1);
+		}
+		return (del_stacknode(&(*head)->next, index - 1));
+	}
+	return (-1);
 }

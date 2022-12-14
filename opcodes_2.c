@@ -16,7 +16,7 @@ PCHAR {
 }
 
 PSTR {
-	stack_t *temp = *stack;
+	STACK_STRUCT *temp = *stack;
 
 	(NON)line_number;
 	for ( ; temp && (temp->n > 0 && temp->n < 127); temp = temp->next)
@@ -31,7 +31,7 @@ ROTL {
 }
 
 ROTR {
-	stack_t *temp = *stack, *temp_2 = NULL;
+	STACK_STRUCT *temp = *stack, *temp_2 = NULL;
 
 	(NON)line_number;
 	for (; temp; temp = temp->next)
