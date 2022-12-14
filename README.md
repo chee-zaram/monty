@@ -18,14 +18,15 @@ Below are some general rules for writing Monty byte code;
 #### Installation
 Clone this repository and change directory into it:
 ```sh
-git clone
+git clone https://github.com/chee-zaram/monty.git
 cd monty
 ```
-You should have `gcc` installed. To install the Monty Interpreter and use it in the current directory, run:
+You should have `gcc` installed. To install the Monty Interpreter and use it
+in the current directory, run:
 ```sh
 make install
 ```
-Otherwise, to move it to a standard location, run the following:
+Otherwise, install and move it to a standard location, run the following instead:
 ```sh
 make install
 make monty
@@ -37,13 +38,15 @@ make clean
 #### Usage
 The interpreter is invoked by running
 ```sh
-monty file[.m]
+monty filename[.m]
 ```
-where `file` is a file containing Monty bytecodes with an optional `.m` suffix.
+where `filename` is the file containing Monty bytecodes with an optional `.m` suffix.
+
 ## Contributors
 [Chee-zaram Okeke](https://github.com/chee-zaram).
 ***
-For bugs, open an issue.
+For bugs and suggestions, consider
+[opening an issue](https://github.com/chee-zaram/monty/issues).
 For collaborations, email \<ecokeke21@gmail.com\>.
 ***
 
