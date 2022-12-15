@@ -1,5 +1,5 @@
 CC		:= gcc
-CFLAGS		:= -pedantic -std=c89
+CFLAGS		:= -Wall -Werror -Wextra -pedantic -std=c89
 GFLAG		:= -g
 RMFLAGS		:= -rf
 CFILES		:= monty.c misc.c opcodes.c opcodes_2.c opcodes_arthmtcs.c \
