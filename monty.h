@@ -10,6 +10,8 @@
 #define SUCCESS			(0)
 #define FALSE			(0)
 #define TRUE			(1)
+#define ASCII_MAX		(127)
+#define ASCII_MIN		(32)
 
 /********************* error strings *********************************/
 #define ERR_ARG_CNT		"USAGE: monty file\n"
