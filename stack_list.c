@@ -109,41 +109,21 @@ STACK_STRUCT *add_node_at_idx(STACK_STRUCT **h, _UI_ idx, _INT_ n)
 	return (new);
 }
 
-
 /**
- * del_stacknode - Deletes a node at a given index.
+ * del_top - Deletes the top of the stack.
  * @head: Address of head pointer.
- * @index: Index to find node in list.
- *
- * Return: 1 if successful, -1 otherwise.
  */
-_INT_ del_stacknode(STACK_STRUCT **head, _UI_ index)
+void del_top(STACK_STRUCT **head)
 {
-	STACK_STRUCT *temp, *temp_next, *temp_prev;
+	STACK_STRUCT *temp;
 
-	if (head && *head)
+	if (*head)
 	{
-		if (index == 0)
-		{
-			temp = *head;
-			temp_next = (*head)->next;
-			temp_prev = (*head)->prev;
-			if (temp_prev)
-			{
-				if (temp_next)
-					temp_prev->next = temp_next;
-				else
-					temp_prev->next = NULL;
-			}
-			if (temp_next)
-				temp_next->prev = temp_prev;
-			if (!temp_prev)
-				*head = (*head)->next;
-			free(temp);
-			temp = NULL;
-			return (1);
-		}
-		return (del_stacknode(&(*head)->next, index - 1));
+		temp = *head;
+		if ((*head)->next)
+			(*head)->next->prev = NULL;
+		*head = (*head)->next;
+		free(temp);
+		temp = NULL;
 	}
-	return (-1);
 }

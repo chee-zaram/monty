@@ -44,7 +44,7 @@ PINT {
 
 POP {
 	if (*stack)
-		DEL_TOP(stack, 0);
+		DEL_TOP(stack);
 	else
 		FREE_STACK(*stack), CLOSE(ERR_POP, line_number);
 }
