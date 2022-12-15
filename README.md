@@ -3,7 +3,7 @@
 [![Sponsor][sponsor-badge]][sponsor]
 
 ***
-Monty byte codes, just like Python byte code, consist of a series of operations
+Monty byte codes, just like Python byte codes, consist of a series of operations
 which come about after a compilation process. The Monty Language relies on a
 unique stack, with specific instructions that act as directives.
 ***
@@ -76,4 +76,4 @@ or the character is not printable or the stack is over.
 ***
 
 [sponsor-badge]: https://img.shields.io/badge/♥-Sponsor-fc0fb5.svg
-[sponsor]: https://github.com/sponsors/jsynowiec
+[sponsor]: https://github.com/sponsors/chee-zaram
