@@ -161,8 +161,8 @@ NON queue(stack_t **stack, _UI_ line_number);
 
 
 /************************* misc.c ***************************/
-NON FREE_STACK(stack_t *stack);
-#define FREE_STACK_FUNC		NON FREE_STACK(stack_t *stack)
+NON FREE_STACK(stack_t **stack);
+#define FREE_STACK_FUNC		NON FREE_STACK(stack_t **stack)
 
 #define CLOSE			end_prog_on_op_err
 NON CLOSE(_CHAR_ *msg, _UI_ line_number);
@@ -173,8 +173,8 @@ _INT_ ISDIGIT(_INT_ c);
 #define ISDIGIT_FUNC		_INT_ ISDIGIT(_INT_ c)
 
 #define CLEAN_FOR_ZARAM		clean_for_malloc
-NON CLEAN_FOR_ZARAM(stack_t *stack);
-#define CLEAN_FOR_MALLOC_FUNC	NON CLEAN_FOR_ZARAM(stack_t *stack)
+NON CLEAN_FOR_ZARAM(stack_t **stack);
+#define CLEAN_FOR_MALLOC_FUNC	NON CLEAN_FOR_ZARAM(stack_t **stack)
 
 
 /***************************************************************/
