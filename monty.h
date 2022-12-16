@@ -72,6 +72,9 @@ typedef ssize_t			_SSIZE_T_;
 #define STACK			void stack(stack_t **stack, _UI_ line_number)
 #define QUEUE			void queue(stack_t **stack, _UI_ line_number)
 #define OPEN_FILE()		fopen(BYTE_CODE_FILE, READ_ONLY)
+#define CHECK_FOR_SIGN(i)					\
+(i == 0 && (misc_data.arg[i] == '+' || misc_data.arg[i] == '-'))
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
