@@ -18,6 +18,11 @@ PUSH {
 
 	for (i = 0; misc_data.arg[i]; i++)
 	{
+		/* incase the number has a sign */
+		if (CHECK_FOR_SIGN(i))
+			if (misc_data.arg[i + 1])
+				continue;
+
 		/* check arg contains only digits */
 		if (_isdigit(misc_data.arg[i]))
 			continue;
