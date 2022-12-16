@@ -47,8 +47,11 @@ PSTR {
  */
 ROTL {
 	(NON)line_number;
-	add_node_to_end(stack, (*stack)->n);
-	pop(stack, 0);
+	if (*stack)
+	{
+		add_node_to_end(stack, (*stack)->n);
+		pop(stack, 0);
+	}
 }
 
 /*
